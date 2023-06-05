@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import styles from './page.module.css'
+import Link from 'next/link'
 
 export default function Home() {
   return (
@@ -51,17 +52,12 @@ export default function Home() {
           <p>Learn more about Open ID Connect</p>
         </a>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <Link href="/game" className={styles.card}>
           <h1>
             PLAY <span>-&gt;</span>
           </h1>
           <p>Play the game</p>
-        </a>
+        </Link>
 
         <a
           href="https://moneyhub.com"
