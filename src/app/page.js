@@ -52,7 +52,7 @@ export default function Home() {
           <p>Learn more about Open ID Connect</p>
         </a>
 
-        <Link href="/game" className={styles.card}>
+        <Link href="/levels" className={styles.card}>
           <h1>
             PLAY <span>-&gt;</span>
           </h1>
