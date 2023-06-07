@@ -1,14 +1,16 @@
-'use client'
 
 //import styles from './page.module.css'
-import Template from '../template'
+import LevelPage from '../level-page'
 
 export default function ImplicitFlow() {
   return (
-    <Template
-      levelName={"Level 1: implicit flow"}
+    <LevelPage
+      levelTitleImageName={"implicit-flow"}
+      levelTitleAltText={"Level 1: Implicity Flow"}
+      levelTitleWidth={500}
+      levelTitleHeight={60}
     >
-
-    </Template>
+      <div>Hello implicit flow</div>
+    </LevelPage>
   )
 }
