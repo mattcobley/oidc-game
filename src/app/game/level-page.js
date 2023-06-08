@@ -2,7 +2,6 @@
 import styles from './game.module.css'
 import Image from 'next/image'
 import StepsList from './steps-list'
-import Code from './code'
 import OptionsList from './options-list'
 
 export default function LevelPage({
@@ -12,6 +11,7 @@ export default function LevelPage({
   levelTitleHeight = 0,
   steps = [],
   options = [],
+  children
 }) {
   return (
     <div className={styles.levelpage}>
@@ -29,8 +29,8 @@ export default function LevelPage({
       </div>
       <div className={styles.content}>
         <StepsList steps={steps}></StepsList>
-        <Code />
-        <OptionsList steps={options}></OptionsList>
+        {children}
+        <OptionsList options={options}></OptionsList>
       </div>
       <div className={styles.speech}>
         <div className={styles.innerspeech}>Here is some test text</div>

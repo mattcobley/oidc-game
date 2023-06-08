@@ -64,4 +64,10 @@
   height: 40px;
 }
 
-.options {}
+.options {
+  list-style-type: none;
+}
+
+.option {}
+
+.optionImage {}
