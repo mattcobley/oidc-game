@@ -3,6 +3,7 @@ import LevelPage from '../level-page'
 import Dropzone from './dropzone'
 import { useSelector, useDispatch } from 'react-redux'
 import { setStepId } from '../../stepSlice'
+import messages from "./prompt-test.json"
 
 export default function ImplicitFlow() {
   const dispatch = useDispatch()
@@ -25,6 +26,36 @@ export default function ImplicitFlow() {
     { name: "scopes", text: "Scopes", imagePath: "/scopes.gif", imageWidth: 168, imageHeight: 152 },
     { name: "access-token", text: "Access Token", imagePath: "/code.png", imageWidth: 56, imageHeight: 56 }
   ]
+
+  const messageOptions = {
+    1: [
+      {name: "post-request", message: messages.step_one.post},
+      {name: "data-endpoint", message: messages.step_one.data_endpoint},
+      {name: "token-endpoint", message: messages.step_one.token_endpoint},
+      {name: "client-secret", message: messages.step_one.client_secret},
+      {name: "get-request", message: messages.step_one.get},
+      {name: "auth-endpoint", message: messages.step_one.auth_endpoint},
+      {name: "client-id", message: messages.step_one.client_id},
+      {name: "redirect-uri", message: messages.step_one.redirect_uri},
+      {name: "token-response", message: messages.step_one.token_response},
+      {name: "scopes", message: messages.step_one.scopes},
+      {name: "access-token", message: messages.step_one.access_token},
+    ],
+    2: [],
+    3: [
+      {name: "post-request", message: messages.step_three.post},
+      {name: "data-endpoint", message: messages.step_three.data_endpoint},
+      {name: "token-endpoint", message: messages.step_three.token_endpoint},
+      {name: "client-secret", message: messages.step_three.client_secret},
+      {name: "get-request", message: messages.step_three.get},
+      {name: "auth-endpoint", message: messages.step_three.auth_endpoint},
+      {name: "client-id", message: messages.step_three.client_id},
+      {name: "redirect-uri", message: messages.step_three.redirect_uri},
+      {name: "token-response", message: messages.step_three.token_response},
+      {name: "scopes", message: messages.step_three.scopes},
+      {name: "access-token", message: messages.step_three.access_token},
+    ]
+  }
 
   const answerOptions = {
     1: [
@@ -65,7 +96,7 @@ export default function ImplicitFlow() {
       ]}
       stepId={stepId}
     >
-      <Dropzone requestPanelImagePath={requestPanelImagePath[stepId]} options={answerOptions[stepId] || []} levelId={"level1"} stepId={stepId} />
+      <Dropzone requestPanelImagePath={requestPanelImagePath[stepId]} options={answerOptions[stepId] || []} messages={messageOptions[stepId] || []} levelId={"level1"} stepId={stepId} />
     </LevelPage>
   )
 }
