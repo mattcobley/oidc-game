@@ -13,12 +13,23 @@ export default function Dropzone({ requestPanelImagePath, options = 0, levelId }
   }
 
   const optionNames = options.map((option) => option.name)
+  const answersCorrect = Object.keys(answers).map((answerKey) => answers[answerKey])
+  const allCorrect = answersCorrect.every((answerCorrect) => answerCorrect)
+
+  console.log("answersCorrect", answersCorrect)
+  console.log("allCorrect", allCorrect)
+  if (allCorrect) {
+    alert("Nice work! Let's move on to the next step")
+  }
 
   const drop = (event) => {
     event.preventDefault()
     if (optionNames.includes(dragId)) {
       dispatch(setAnswer({ levelId: "level1", answerName: dragId }))
       dispatch(resetText())
+      if (allCorrect) {
+        alert("Nice work! Let's move on to the next step")
+      }
     }
     else {
       dispatch(setText("Sorry, that's incorrect"))
