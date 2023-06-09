@@ -3,7 +3,6 @@ import { useSelector, useDispatch } from 'react-redux'
 import Image from 'next/image'
 import { setAnswer } from '../../answerSlice'
 import { setText, resetText } from '../../textSlice'
-import { setStepId } from '../../stepSlice'
 
 export default function Dropzone({ requestPanelImagePath, options = [], levelId, stepId = 1 }) {
   const dispatch = useDispatch()
@@ -52,19 +51,23 @@ export default function Dropzone({ requestPanelImagePath, options = [], levelId,
           unoptimized
         />
         {options.map((option) => {
-          return <Image
+          return <div
             key={option.name}
-            id={`${option.name}-drag`}
-            className={styles.optionimageDrag}
-            src={`${option.imagePath}`}
-            alt={`${option.name}`}
-            width={option.imageWidth}
-            height={option.imageHeight}
-            priority
-            style={{ top: option.targetTop, left: option.targetLeft }}
-            unoptimized
-            hidden={!(answers[option.name])}
-          />
+            style={{ top: option.targetTop, left: option.targetLeft, height: option.imageHeight, width: option.imageWidth }}
+            className={styles.imagewrapper}>
+            <Image
+              key={option.name}
+              id={`${option.name}-drag`}
+              className={styles.optionimageDrag}
+              src={`${option.imagePath}`}
+              alt={`${option.name}`}
+              width={option.imageWidth}
+              height={option.imageHeight}
+              priority
+              unoptimized
+              hidden={!(answers[option.name])}
+            />
+          </div>
         })}
       </div>
     </div>

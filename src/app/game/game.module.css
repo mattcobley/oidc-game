@@ -143,3 +143,8 @@
   left: -80px;
   top: -10px;
 }
+
+.imagewrapper {
+  position: absolute;
+  z-index: 100;
+}
