@@ -5,6 +5,7 @@ import StepsList from './steps-list'
 import OptionsList from './options-list'
 import { useSelector, useDispatch } from 'react-redux'
 import { setStepId } from '../stepSlice'
+import { setText } from '../textSlice'
 
 export default function LevelPage({
   levelTitleImageName,
@@ -19,10 +20,23 @@ export default function LevelPage({
 }) {
   const dispatch = useDispatch()
   const text = useSelector((state) => state.text.text)
-  const answers = useSelector((state) => state.answer[levelId][stepId])
+  const answers = useSelector((state) => state.answer[levelId][stepId] || {})
+
   const showConsentComplete = stepId === 2 && levelId === "level1" && answers.consent
 
-  const onClick = () => {
+  const answersCorrect = Object.keys(answers).map((answerKey) => answers[answerKey])
+  const allCorrect = answersCorrect.length > 0 && answersCorrect.every((answerCorrect) => answerCorrect)
+  const showStep1Complete = stepId === 1 && levelId === "level1" && allCorrect
+
+  if (showConsentComplete || showStep1Complete) {
+    dispatch(setText("Nice work! Let's move on to the next step"))
+  }
+
+  const onStep1Click = () => {
+    dispatch(setStepId({ levelId: "level1", stepId: 2 }))
+  }
+
+  const onStep2Click = () => {
     dispatch(setStepId({ levelId: "level1", stepId: 3 }))
   }
 
@@ -61,6 +75,17 @@ export default function LevelPage({
         <div className={styles.innerspeech}>{text}</div>
       </div>
       <Image
+        className={styles.authreqcomplete}
+        src={`/auth_request_complete.gif`}
+        alt={`Auth request complete`}
+        width={512}
+        height={512}
+        priority
+        unoptimized
+        hidden={!showStep1Complete}
+        onClick={() => onStep1Click()}
+      />
+      <Image
         className={styles.consentcomplete}
         src={`/token_acquired.gif`}
         alt={`Consent complete`}
@@ -69,7 +94,7 @@ export default function LevelPage({
         priority
         unoptimized
         hidden={!showConsentComplete}
-        onClick={() => onClick()}
+        onClick={() => onStep2Click()}
       />
     </div>
   )

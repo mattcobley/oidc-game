@@ -15,12 +15,6 @@ export default function Dropzone({ requestPanelImagePath, options = [], levelId,
 
   const optionNames = options.map((option) => option.name)
 
-  const answersCorrect = Object.keys(answers).map((answerKey) => answers[answerKey])
-  const allCorrect = answersCorrect.length > 0 && answersCorrect.every((answerCorrect) => answerCorrect)
-
-  if (allCorrect) {
-    dispatch(setStepId({ levelId, stepId: stepId + 1 }))
-  }
   const drop = (event) => {
     event.preventDefault()
     if (optionNames.includes(dragId)) {
