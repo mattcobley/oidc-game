@@ -1,8 +1,6 @@
 .levelpage {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
+  height: 800px;
+  width: 1300px;
 }
 
 .center {
@@ -16,21 +14,27 @@
 
 .pagetitle {
   min-height: 50px;
+  position: absolute;
+  top: 5px;
+  left: 320px;
 }
 
 .content {
-  display: flex;
-  flex-direction: row;
-  min-height: 50vh;
+  position: absolute;
+  top: 80px;
+  left: 50px;
 }
 
 .speech {
-  min-height: 14vh;
-  min-width: 55vw;
   border-radius: 5px;
   margin: 15px;
   border: 1px solid grey;
   background-color: white;
+  position: absolute;
+  top: 620px;
+  left: 100px;
+  width: 900px;
+  height: 80px;
 }
 
 .innerspeech {
@@ -40,8 +44,12 @@
 
 .stepslist {
   border: 5px solid grey;
-  min-height: 60vh;
+  height: 400px;
+  width: 180px;
   margin: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .stepslisttitle {
@@ -64,8 +72,10 @@
 .codeinternal {
   border: 5px solid grey;
   width: 650px;
-  height: 550px;
-  flex-grow: 0;
+  height: 530px;
+  position: absolute;
+  top: 0;
+  left: 200px;
 }
 
 .requestPanel {}
@@ -74,6 +84,9 @@
   border: 5px solid grey;
   min-height: 60vh;
   margin: 10px;
+  position: absolute;
+  top: 0;
+  left: 850px;
 }
 
 .optionslisttitle {
