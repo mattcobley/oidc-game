@@ -13,12 +13,21 @@ export default function ImplicitFlow() {
   }
 
   const options = [
-    { name: "get-request", text: "GET", imagePath: "/get_method.png", imageWidth: 76, imageHeight: 40, targetTop: "120px !important", targetLeft: "220px !important" },
+    { name: "get-request", text: "GET", imagePath: "/get_method.png", imageWidth: 76, imageHeight: 40 },
     { name: "post-request", text: "POST", imagePath: "/post_method.png", imageWidth: 76, imageHeight: 40 },
     { name: "auth-endpoint", text: "Authorize", imagePath: "/auth_endpoint.png", imageWidth: 212, imageHeight: 68 },
     { name: "token-endpoint", text: "Token", imagePath: "/token_endpoint.png", imageWidth: 212, imageHeight: 68 },
     { name: "client-id", text: "ID", imagePath: "/client_id.png", imageWidth: 28, imageHeight: 64 },
     { name: "client-secret", text: "Secret", imagePath: "/client_secret.png", imageWidth: 28, imageHeight: 64 },
+    { name: "redirect-uri", text: "Redirect", imagePath: "/redirect.png", imageWidth: 76, imageHeight: 88 },
+    { name: "token-response", text: "Token Response", imagePath: "/token_response.png", imageWidth: 136, imageHeight: 80 },
+    { name: "scopes", text: "Scopes", imagePath: "/scopes.gif", imageWidth: 168, imageHeight: 152 }
+  ]
+
+  const answerOptions = [
+    { name: "get-request", text: "GET", imagePath: "/get_method.png", imageWidth: 76, imageHeight: 40, targetTop: "96px !important", targetLeft: "132px !important" },
+    { name: "auth-endpoint", text: "Authorize", imagePath: "/auth_endpoint.png", imageWidth: 212, imageHeight: 68, targetTop: "96px !important", targetLeft: "150px !important" },
+    { name: "client-id", text: "ID", imagePath: "/client_id.png", imageWidth: 28, imageHeight: 64 },
     { name: "redirect-uri", text: "Redirect", imagePath: "/redirect.png", imageWidth: 76, imageHeight: 88 },
     { name: "token-response", text: "Token Response", imagePath: "/token_response.png", imageWidth: 136, imageHeight: 80 },
     { name: "scopes", text: "Scopes", imagePath: "/scopes.gif", imageWidth: 168, imageHeight: 152 }
@@ -39,7 +48,7 @@ export default function ImplicitFlow() {
         { label: "STEP 3", id: "step3", selected: stepId === "step3" }
       ]}
     >
-      <Dropzone requestPanelImagePath={"/request_panel.png"} options={options} />
+      <Dropzone requestPanelImagePath={"/request_panel.png"} options={answerOptions} />
     </LevelPage>
   )
 }
