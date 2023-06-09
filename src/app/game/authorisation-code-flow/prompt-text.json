@@ -1,0 +1,12 @@
+{
+	"get": "Inorrect, as this is the authorisation code flow we need to POST to get the authorisation code.",
+	"post": "Correct! As this is the authorisation code flow we require POSTing our auth request to the /authorize endpoint.",
+	"scopes": "Correct! We simply require the 'oidc' scope to authenticate the user via OIDC.",
+	"redirect_uri": "Correct! Upon the authorisation server authenticating the user successfully, we need to send the authorization code to the redirect URI inputted.",
+	"auth_endpoint": "Correct! As this is the authorisation code flow we need to request the authorisation code from the /authorize endpoint, which we can then use to get our access token.",
+	"token_endpoint": "Correct! As we have the authorisation code we need to call the /token endpoint with this value to receive our access token.",
+	"client_id": "Correct! All requests to the /authorize endpoint mandate a client ID being passed.",
+	"client_secret": "Correct! As the request to /token is coming from our backend service, we require sending a client secret to provide authentication to the authorisation server, allowing us to receive the access token.",
+	"token_response_type": "Incorrect, as this is the authorisation code flow we must specify a response type of 'code' to receive the authorisation code.",
+  "code_response_type": "Correct! With the authorisation code flow, we require the /authorize endpoint to provision us an authorisation code, which we can trade for an access token later."
+}
