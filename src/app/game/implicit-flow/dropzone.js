@@ -2,7 +2,7 @@ import styles from '../game.module.css'
 import { useSelector } from 'react-redux'
 import Image from 'next/image'
 
-export default function Dropzone({ requestPanelImagePath }) {
+export default function Dropzone({ requestPanelImagePath, options = 0 }) {
   const dragId = useSelector((state) => state.drag.dragId)
   const allowDrop = (event) => {
     event.preventDefault()
@@ -34,6 +34,19 @@ export default function Dropzone({ requestPanelImagePath }) {
           height={512}
           priority
         />
+        {options.map((option) => {
+          return <Image
+            key={option.name}
+            id={`${option.name}-drag`}
+            className={styles.optionimageDrag}
+            src={`${option.imagePath}`}
+            alt={`${option.name}`}
+            width={option.imageWidth}
+            height={option.imageHeight}
+            priority
+            style={{ top: option.targetTop, left: option.targetLeft }}
+          />
+        })}
       </div>
     </div>
   )
