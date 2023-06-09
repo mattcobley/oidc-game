@@ -1,0 +1,11 @@
+{
+	"get": "Correct! As this is the implicit flow, we simply need to GET the access token directly.",
+	"post": "Incorrect, the implicit flow simply requires GETting the access token directly.",
+	"scopes": "Correct! We simply require the 'oidc' scope to authenticate the user via OIDC.",
+	"redirect_uri": "Correct! Upon the authorisation server authenticating the user successfully, we need to send the access token to the redirect URI inputted.",
+	"auth_endpoint": "Correct! As this is the implicit flow, everything we need we get from the /authorize endpoint, and the /token endpoint remains unused.",
+	"token_endpoint": "Incorrect, in the implicit flow we get our access token directly from the /authorize endpoint, and have no need to interact with /token.",
+	"client_id": "Correct! All requests to the /authorize endpoint mandate a client ID being passed.",
+	"client_secret": "Incorrect, the client secret is used only in the authorisation code flow, and is sent to the /token endpoint to exchange an authorisation code for an access token.",
+	"token_response_type": "Correct! As this is the implicit flow, we will not be using the standard 'code' response type, as we are asking for the access token directly."
+}
