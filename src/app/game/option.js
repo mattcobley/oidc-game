@@ -24,6 +24,7 @@ export default function Option({ option }) {
         priority
         draggable="true"
         onDragStart={(e) => drag(e)}
+        unoptimized
       />
     </li>
   )

@@ -24,6 +24,7 @@ export default function LevelPage({
             width={levelTitleWidth}
             height={levelTitleHeight}
             priority
+            unoptimized
           />
         </div>
       </div>

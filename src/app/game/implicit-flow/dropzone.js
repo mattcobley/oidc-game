@@ -33,6 +33,7 @@ export default function Dropzone({ requestPanelImagePath, options = 0 }) {
           width={512}
           height={512}
           priority
+          unoptimized
         />
         {options.map((option) => {
           return <Image

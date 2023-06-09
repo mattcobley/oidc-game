@@ -13,6 +13,7 @@ export default function OptionsList({ options = [] }) {
           width={150}
           height={30}
           priority
+          unoptimized
         />
       </div>
       <ul className={styles.options}>{
