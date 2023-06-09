@@ -48,7 +48,7 @@ export default function ImplicitFlow() {
         { label: "STEP 3", id: "step3", selected: stepId === "step3" }
       ]}
     >
-      <Dropzone requestPanelImagePath={"/request_panel.png"} options={answerOptions} />
+      <Dropzone requestPanelImagePath={"/request_panel.png"} options={answerOptions} levelId={"level1"} />
     </LevelPage>
   )
 }

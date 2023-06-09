@@ -1,21 +1,25 @@
 import styles from '../game.module.css'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import Image from 'next/image'
+import { setAnswer } from '../../answerSlice'
 
-export default function Dropzone({ requestPanelImagePath, options = 0 }) {
+export default function Dropzone({ requestPanelImagePath, options = 0, levelId }) {
+  const dispatch = useDispatch()
   const dragId = useSelector((state) => state.drag.dragId)
+  const answers = useSelector((state) => state.answer[levelId])
   const allowDrop = (event) => {
     event.preventDefault()
   }
 
+  const optionNames = options.map((option) => option.name)
+
   const drop = (event) => {
     event.preventDefault()
-    if (dragId === "post-request") {
-      alert("Sorry, not correct!")
+    if (optionNames.includes(dragId)) {
+      dispatch(setAnswer({ levelId: "level1", answerName: dragId }))
     }
     else {
-      document.getElementById("dropzone1").appendChild(document.getElementById(dragId))
-      alert("Well done!")
+      alert("Sorry, not correct!")
     }
   }
   return (
@@ -47,6 +51,7 @@ export default function Dropzone({ requestPanelImagePath, options = 0 }) {
             priority
             style={{ top: option.targetTop, left: option.targetLeft }}
             unoptimized
+            hidden={!(answers[option.name])}
           />
         })}
       </div>
