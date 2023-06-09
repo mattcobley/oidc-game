@@ -3,6 +3,7 @@ import styles from './game.module.css'
 import Image from 'next/image'
 import StepsList from './steps-list'
 import OptionsList from './options-list'
+import { useSelector } from 'react-redux'
 
 export default function LevelPage({
   levelTitleImageName,
@@ -13,6 +14,7 @@ export default function LevelPage({
   options = [],
   children
 }) {
+  const text = useSelector((state) => state.text.text)
   return (
     <div className={styles.levelpage}>
       <div className={styles.pagetitle}>
@@ -34,7 +36,7 @@ export default function LevelPage({
         <OptionsList options={options}></OptionsList>
       </div>
       <div className={styles.speech}>
-        <div className={styles.innerspeech}>Here is some test text</div>
+        <div className={styles.innerspeech}>{text}</div>
       </div>
     </div>
   )

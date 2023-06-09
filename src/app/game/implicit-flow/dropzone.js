@@ -2,6 +2,7 @@ import styles from '../game.module.css'
 import { useSelector, useDispatch } from 'react-redux'
 import Image from 'next/image'
 import { setAnswer } from '../../answerSlice'
+import { setText, resetText } from '../../textSlice'
 
 export default function Dropzone({ requestPanelImagePath, options = 0, levelId }) {
   const dispatch = useDispatch()
@@ -17,9 +18,10 @@ export default function Dropzone({ requestPanelImagePath, options = 0, levelId }
     event.preventDefault()
     if (optionNames.includes(dragId)) {
       dispatch(setAnswer({ levelId: "level1", answerName: dragId }))
+      dispatch(resetText())
     }
     else {
-      alert("Sorry, not correct!")
+      dispatch(setText("Sorry, that's incorrect"))
     }
   }
   return (
