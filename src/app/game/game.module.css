@@ -40,6 +40,19 @@
   height: 40px;
 }
 
+.step {
+  padding: 10px;
+  border: 1px solid grey;
+  margin: 3px;
+}
+
+.selected {
+  padding: 10px;
+  margin: 3px;
+  border: 5px solid green;
+  color: brown;
+}
+
 .code {
   min-width: 60vw;
   min-height: 50vh;

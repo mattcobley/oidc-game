@@ -1,5 +1,6 @@
-import styles from '../page.module.css'
+import styles from './game.module.css'
 
-export default function Step() {
-  return (<div className={styles.main}>STEP!!</div>)
+export default function Step({ step }) {
+  const { label, id, selected } = step
+  return (<div id={id} className={`${styles.step} ${selected ? styles.selected : ""}`}>{label}</div>)
 }
