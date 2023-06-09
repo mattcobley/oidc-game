@@ -26,8 +26,8 @@ export default function ImplicitFlow() {
         { name: "client-id", text: "ID", imagePath: "/client_id.png", imageWidth: 28, imageHeight: 64 },
         { name: "client-secret", text: "Secret", imagePath: "/client_secret.png", imageWidth: 28, imageHeight: 64 },
         { name: "redirect-uri", text: "Redirect", imagePath: "/redirect.png", imageWidth: 76, imageHeight: 88 },
-        { name: "token-response", text: "Token Response", imagePath: "/token_response.png", imageWidth: 136, imageHeight: 80 }
-
+        { name: "token-response", text: "Token Response", imagePath: "/token_response.png", imageWidth: 136, imageHeight: 80 },
+        { name: "scopes", text: "Scopes", imagePath: "/scopes.gif", imageWidth: 42, imageHeight: 38 }
       ]}
       answers={[{ dropzoneId: "dropzone1", dragId: "get-request" }]}
       steps={[
