@@ -28,12 +28,14 @@
 .speech {
   border-radius: 5px;
   margin: 15px;
-  border: 1px solid grey;
   position: absolute;
   top: 620px;
   left: 100px;
   width: 900px;
-  height: 80px;
+  height: 100px;
+  background-image: url("/chat-box.gif");
+  background-position: center;
+  background-size: cover;
 }
 
 .innerspeech {
@@ -97,11 +99,25 @@
   list-style-type: none;
 }
 
-.option {}
+.option {
+  margin: 10px;
+  font-weight: 800;
+  border-bottom: 2px solid grey;
+}
 
 .optionImage {}
 
 .optionimageDrag {
   position: absolute;
   z-index: 1000000;
+}
+
+.hero {
+  position: relative;
+}
+
+.innerhero {
+  position: absolute;
+  left: -80px;
+  top: -10px;
 }

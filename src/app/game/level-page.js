@@ -36,6 +36,17 @@ export default function LevelPage({
         <OptionsList options={options}></OptionsList>
       </div>
       <div className={styles.speech}>
+        <div className={styles.hero}>
+          <Image
+            className={styles.innerhero}
+            src="/hacker_hero.gif"
+            alt="hero image"
+            width={120}
+            height={120}
+            priority
+            unoptimized
+          />
+        </div>
         <div className={styles.innerspeech}>{text}</div>
       </div>
     </div>
