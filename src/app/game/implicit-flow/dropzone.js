@@ -46,6 +46,7 @@ export default function Dropzone({ requestPanelImagePath, options = 0 }) {
             height={option.imageHeight}
             priority
             style={{ top: option.targetTop, left: option.targetLeft }}
+            unoptimized
           />
         })}
       </div>

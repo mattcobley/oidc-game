@@ -26,11 +26,11 @@ export default function ImplicitFlow() {
 
   const answerOptions = [
     { name: "get-request", text: "GET", imagePath: "/get_method.png", imageWidth: 76, imageHeight: 40, targetTop: "96px !important", targetLeft: "132px !important" },
-    { name: "auth-endpoint", text: "Authorize", imagePath: "/auth_endpoint.png", imageWidth: 212, imageHeight: 68, targetTop: "96px !important", targetLeft: "150px !important" },
-    { name: "client-id", text: "ID", imagePath: "/client_id.png", imageWidth: 28, imageHeight: 64 },
-    { name: "redirect-uri", text: "Redirect", imagePath: "/redirect.png", imageWidth: 76, imageHeight: 88 },
-    { name: "token-response", text: "Token Response", imagePath: "/token_response.png", imageWidth: 136, imageHeight: 80 },
-    { name: "scopes", text: "Scopes", imagePath: "/scopes.gif", imageWidth: 168, imageHeight: 152 }
+    { name: "auth-endpoint", text: "Authorize", imagePath: "/auth_endpoint.png", imageWidth: 212, imageHeight: 68, targetTop: "96px !important", targetLeft: "218px !important" },
+    { name: "client-id", text: "ID", imagePath: "/client_id.png", imageWidth: 28, imageHeight: 64, targetTop: "409px !important", targetLeft: "120px !important" },
+    { name: "redirect-uri", text: "Redirect", imagePath: "/redirect.png", imageWidth: 76, imageHeight: 88, targetTop: "96px !important", targetLeft: "448px !important" },
+    { name: "token-response", text: "Token Response", imagePath: "/token_response.png", imageWidth: 136, imageHeight: 80, targetTop: "225px !important", targetLeft: "156px !important" },
+    { name: "scopes", text: "Scopes", imagePath: "/scopes.gif", imageWidth: 168, imageHeight: 152, targetTop: "310px !important", targetLeft: "340px !important" }
   ]
 
   return (

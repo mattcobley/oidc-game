@@ -102,6 +102,5 @@
 
 .optionimageDrag {
   position: absolute;
-  border: 5px solid red;
   z-index: 1000000;
 }
