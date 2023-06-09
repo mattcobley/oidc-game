@@ -12,6 +12,15 @@ const initialState = {
     },
     2: {
       ["consent"]: false,
+      ["confirm"]: false,
+    },
+    3: {
+      ["get-request"]: false,
+      ["auth-endpoint"]: false,
+      ["client-id"]: false,
+      ["redirect-uri"]: false,
+      ["token-response"]: false,
+      ["scopes"]: false,
     }
   }
 }

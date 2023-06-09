@@ -3,7 +3,8 @@ import styles from './game.module.css'
 import Image from 'next/image'
 import StepsList from './steps-list'
 import OptionsList from './options-list'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { setStepId } from '../stepSlice'
 
 export default function LevelPage({
   levelTitleImageName,
@@ -12,9 +13,19 @@ export default function LevelPage({
   levelTitleHeight = 0,
   steps = [],
   options = [],
+  stepId,
+  levelId,
   children
 }) {
+  const dispatch = useDispatch()
   const text = useSelector((state) => state.text.text)
+  const answers = useSelector((state) => state.answer[levelId][stepId])
+  const showConsentComplete = stepId === 2 && levelId === "level1" && answers.consent
+
+  const onClick = () => {
+    dispatch(setStepId({ levelId: "level1", stepId: 3 }))
+  }
+
   return (
     <div className={styles.levelpage}>
       <div className={styles.pagetitle}>
@@ -38,6 +49,17 @@ export default function LevelPage({
       <div className={styles.speech}>
         <div className={styles.innerspeech}>{text}</div>
       </div>
+      <Image
+        className={styles.consentcomplete}
+        src={`/access_token.png`}
+        alt={`Consent complete`}
+        width={512}
+        height={512}
+        priority
+        unoptimized
+        hidden={!showConsentComplete}
+        onClick={() => onClick()}
+      />
     </div>
   )
 }

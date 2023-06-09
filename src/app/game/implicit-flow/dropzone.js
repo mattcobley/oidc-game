@@ -14,30 +14,38 @@ export default function Dropzone({ requestPanelImagePath, options = [], levelId,
   }
 
   const optionNames = options.map((option) => option.name)
+
   const answersCorrect = Object.keys(answers).map((answerKey) => answers[answerKey])
   const allCorrect = answersCorrect.length > 0 && answersCorrect.every((answerCorrect) => answerCorrect)
 
   if (allCorrect) {
-    console.log("HERE")
-    dispatch(setText("Nice work! Let's move on to the next step"))
     dispatch(setStepId({ levelId, stepId: stepId + 1 }))
   }
   const drop = (event) => {
     event.preventDefault()
     if (optionNames.includes(dragId)) {
-      dispatch(setAnswer({ levelId: "level1", stepId, answerName: dragId }))
+      dispatch(setAnswer({ levelId, stepId, answerName: dragId }))
       dispatch(resetText())
     }
     else {
       dispatch(setText("Sorry, that's incorrect"))
     }
   }
+
+  const click = (event) => {
+    event.preventDefault()
+    if (levelId === "level1" && stepId === 2) {
+      dispatch(setAnswer({ levelId, stepId, answerName: "consent" }))
+    }
+  }
+
   return (
     <div
       className={styles.codeinternal}
       id="dropzone1"
       onDrop={(e) => drop(e)}
       onDragOver={(e) => allowDrop(e)}
+      onClick={(e) => click(e)}
     >
       <div className={styles.center}>
         <Image

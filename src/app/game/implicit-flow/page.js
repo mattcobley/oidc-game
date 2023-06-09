@@ -39,13 +39,13 @@ export default function ImplicitFlow() {
 
   const requestPanelImagePath = {
     1: "/request_panel.png",
-    2: "",
+    2: "/consent.gif",
     3: ""
   }
 
   return (
     <LevelPage
-      levelId={"implicit"}
+      levelId={"level1"}
       levelTitleImageName={"implicit-flow"}
       levelTitleAltText={"Level 1: Implicity Flow"}
       levelTitleWidth={500}
@@ -57,6 +57,7 @@ export default function ImplicitFlow() {
         { label: "STEP 2", id: 2, selected: stepId === 2 },
         { label: "STEP 3", id: 3, selected: stepId === 3 }
       ]}
+      stepId={stepId}
     >
       <Dropzone requestPanelImagePath={requestPanelImagePath[stepId]} options={answerOptions[stepId] || []} levelId={"level1"} stepId={stepId} />
     </LevelPage>
