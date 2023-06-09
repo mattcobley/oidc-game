@@ -1,7 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-  dragId: undefined,
+  level1: {
+    stepId: undefined
+  }
 }
 
 export const stepSlice = createSlice({

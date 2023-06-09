@@ -3,11 +3,19 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  min-height: 100vh;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 5px;
+  flex-grow: 0
 }
 
 .pagetitle {
-  min-height: 10vh;
+  min-height: 50px;
 }
 
 .content {
@@ -53,19 +61,14 @@
   color: brown;
 }
 
-.code {
-  min-width: 60vw;
-  min-height: 50vh;
+.codeinternal {
   border: 5px solid grey;
-  margin: 10px;
+  width: 650px;
+  height: 550px;
+  flex-grow: 0;
 }
 
-.codeinternal {
-  margin: 10px;
-  border: 1px solid grey;
-  min-width: 58vw;
-  min-height: 90%;
-}
+.requestPanel {}
 
 .optionslist {
   border: 5px solid grey;

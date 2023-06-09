@@ -6,7 +6,8 @@ import { setStepId } from '../../stepSlice'
 
 export default function ImplicitFlow() {
   const dispatch = useDispatch()
-  let stepId = useSelector((state) => state.step?.level1?.dragId)
+  let stepId = useSelector((state) => state.step?.level1?.stepId)
+
   if (!stepId) {
     dispatch(setStepId({ levelId: "level1", stepId: "step1" }))
   }
@@ -28,7 +29,7 @@ export default function ImplicitFlow() {
         { label: "STEP 3", id: "step3", selected: stepId === "step3" }
       ]}
     >
-      <Dropzone />
+      <Dropzone requestPanelImagePath={"/request_panel.png"} />
     </LevelPage>
   )
 }
