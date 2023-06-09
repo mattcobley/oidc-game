@@ -3,33 +3,30 @@ import { useSelector, useDispatch } from 'react-redux'
 import Image from 'next/image'
 import { setAnswer } from '../../answerSlice'
 import { setText, resetText } from '../../textSlice'
+import { setStepId } from '../../stepSlice'
 
-export default function Dropzone({ requestPanelImagePath, options = 0, levelId }) {
+export default function Dropzone({ requestPanelImagePath, options = [], levelId, stepId = 1 }) {
   const dispatch = useDispatch()
   const dragId = useSelector((state) => state.drag.dragId)
-  const answers = useSelector((state) => state.answer[levelId])
+  const answers = useSelector((state) => state.answer[levelId][stepId])
   const allowDrop = (event) => {
     event.preventDefault()
   }
 
   const optionNames = options.map((option) => option.name)
   const answersCorrect = Object.keys(answers).map((answerKey) => answers[answerKey])
-  const allCorrect = answersCorrect.every((answerCorrect) => answerCorrect)
+  const allCorrect = answersCorrect.length > 0 && answersCorrect.every((answerCorrect) => answerCorrect)
 
-  console.log("answersCorrect", answersCorrect)
-  console.log("allCorrect", allCorrect)
   if (allCorrect) {
-    alert("Nice work! Let's move on to the next step")
+    console.log("HERE")
+    dispatch(setText("Nice work! Let's move on to the next step"))
+    dispatch(setStepId({ levelId, stepId: stepId + 1 }))
   }
-
   const drop = (event) => {
     event.preventDefault()
     if (optionNames.includes(dragId)) {
-      dispatch(setAnswer({ levelId: "level1", answerName: dragId }))
+      dispatch(setAnswer({ levelId: "level1", stepId, answerName: dragId }))
       dispatch(resetText())
-      if (allCorrect) {
-        alert("Nice work! Let's move on to the next step")
-      }
     }
     else {
       dispatch(setText("Sorry, that's incorrect"))

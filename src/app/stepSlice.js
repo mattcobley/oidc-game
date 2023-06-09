@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
   level1: {
-    stepId: undefined
+    stepId: 1
   }
 }
 
