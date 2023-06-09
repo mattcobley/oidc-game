@@ -32,11 +32,7 @@ export const answerSlice = createSlice({
     },
     resetLevel: (state, action) => {
       const { levelId } = action.payload
-      Object.keys(state[levelId]).forEach(stepId => {
-        Object.keys(state[levelId][stepId]).forEach((answerName) => {
-          state[levelId][stepId][answerName] = false
-        })
-      })
+      state[levelId] = initialState[levelId]
     }
   },
 })

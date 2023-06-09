@@ -1,8 +1,20 @@
+'use client'
 import Image from 'next/image'
 import styles from './page.module.css'
 import Link from 'next/link'
+import { useDispatch, useSelector } from 'react-redux'
+import { resetLevel } from './answerSlice'
+import { setStepId } from './stepSlice'
 
 export default function Home() {
+  const dispatch = useDispatch()
+  const stepId = useSelector((state) => state.step?.level1?.stepId)
+
+  if (stepId !== 1) {
+    dispatch(resetLevel({ levelId: "level1" }))
+    dispatch(setStepId({ levelId: "level1", stepId: 1 }))
+  }
+
   return (
     <main className={styles.main}>
       <div className={styles.description}>
