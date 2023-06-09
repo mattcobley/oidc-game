@@ -6,6 +6,7 @@ import OptionsList from './options-list'
 import { useSelector, useDispatch } from 'react-redux'
 import { setStepId } from '../stepSlice'
 import { setText } from '../textSlice'
+import { redirect } from 'next/navigation'
 
 export default function LevelPage({
   levelTitleImageName,
@@ -26,10 +27,16 @@ export default function LevelPage({
 
   const answersCorrect = Object.keys(answers).map((answerKey) => answers[answerKey])
   const allCorrect = answersCorrect.length > 0 && answersCorrect.every((answerCorrect) => answerCorrect)
+
   const showStep1Complete = stepId === 1 && levelId === "level1" && allCorrect
+  const showStep3Complete = stepId === 3 && levelId === "level1" && allCorrect
 
   if (showConsentComplete || showStep1Complete) {
     dispatch(setText("Nice work! Let's move on to the next step"))
+  }
+
+  if (showStep3Complete) {
+    dispatch(setText("We did it! Implicit flow successful!!"))
   }
 
   const onStep1Click = () => {
@@ -38,6 +45,10 @@ export default function LevelPage({
 
   const onStep2Click = () => {
     dispatch(setStepId({ levelId: "level1", stepId: 3 }))
+  }
+
+  const onStep3Click = () => {
+    redirect("/")
   }
 
   return (
@@ -95,6 +106,17 @@ export default function LevelPage({
         unoptimized
         hidden={!showConsentComplete}
         onClick={() => onStep2Click()}
+      />
+      <Image
+        className={styles.implicitcomplete}
+        src={`/implicit_success.gif`}
+        alt={`Implicit flow complete`}
+        width={512}
+        height={512}
+        priority
+        unoptimized
+        hidden={!showStep3Complete}
+        onClick={() => onStep3Click()}
       />
     </div>
   )

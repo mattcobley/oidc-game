@@ -15,13 +15,15 @@ export default function ImplicitFlow() {
   const options = [
     { name: "get-request", text: "Method: GET", imagePath: "/get_method.png", imageWidth: 76, imageHeight: 40 },
     { name: "post-request", text: "Method: POST", imagePath: "/post_method.png", imageWidth: 76, imageHeight: 40 },
+    { name: "data-endpoint", text: "Endpoint: Data", imagePath: "/data_endpoint.png", imageWidth: 212, imageHeight: 68 },
     { name: "auth-endpoint", text: "Endpoint: Authorize", imagePath: "/auth_endpoint.png", imageWidth: 212, imageHeight: 68 },
     { name: "token-endpoint", text: "Endpoint: Token", imagePath: "/token_endpoint.png", imageWidth: 212, imageHeight: 68 },
     { name: "client-id", text: "Client: ID", imagePath: "/client_id.png", imageWidth: 28, imageHeight: 64 },
     { name: "client-secret", text: "Client: Secret", imagePath: "/client_secret.png", imageWidth: 28, imageHeight: 64 },
     { name: "redirect-uri", text: "URI: Redirect", imagePath: "/redirect.png", imageWidth: 76, imageHeight: 88 },
     { name: "token-response", text: "Response Type: Token", imagePath: "/token_response.png", imageWidth: 136, imageHeight: 80 },
-    { name: "scopes", text: "Scopes", imagePath: "/scopes.gif", imageWidth: 168, imageHeight: 152 }
+    { name: "scopes", text: "Scopes", imagePath: "/scopes.gif", imageWidth: 168, imageHeight: 152 },
+    { name: "access-token", text: "Access Token", imagePath: "/code.png", imageWidth: 56, imageHeight: 56 }
   ]
 
   const answerOptions = {
@@ -34,13 +36,21 @@ export default function ImplicitFlow() {
       { name: "scopes", text: "Scopes", imagePath: "/scopes.gif", imageWidth: 168, imageHeight: 152, targetTop: "310px !important", targetLeft: "340px !important" }
     ],
     2: [],
-    3: []
+    3: [
+      { name: "get-request", text: "GET", imagePath: "/get_method.png", imageWidth: 76, imageHeight: 40, targetTop: "96px !important", targetLeft: "132px !important" },
+      { name: "data-endpoint", text: "Endpoint: Data", imagePath: "/data_endpoint.png", imageWidth: 212, imageHeight: 68, targetTop: "96px !important", targetLeft: "218px !important" },
+      { name: "client-id", text: "ID", imagePath: "/client_id.png", imageWidth: 28, imageHeight: 64, targetTop: "409px !important", targetLeft: "120px !important" },
+      { name: "redirect-uri", text: "Redirect", imagePath: "/redirect.png", imageWidth: 76, imageHeight: 88, targetTop: "96px !important", targetLeft: "448px !important" },
+      { name: "token-response", text: "Token Response", imagePath: "/token_response.png", imageWidth: 136, imageHeight: 80, targetTop: "225px !important", targetLeft: "156px !important" },
+      { name: "scopes", text: "Scopes", imagePath: "/scopes.gif", imageWidth: 168, imageHeight: 152, targetTop: "310px !important", targetLeft: "340px !important" },
+      { name: "access-token", text: "Access token", imagePath: "/code.png", imageWidth: 56, imageHeight: 56, targetTop: "350px !important", targetLeft: "380px !important" }
+    ]
   }
 
   const requestPanelImagePath = {
     1: "/request_panel.png",
     2: "/consent.gif",
-    3: ""
+    3: "/request_panel.png"
   }
 
   return (

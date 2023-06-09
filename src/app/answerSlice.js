@@ -16,11 +16,12 @@ const initialState = {
     },
     3: {
       ["get-request"]: false,
-      ["auth-endpoint"]: false,
+      ["data-endpoint"]: false,
       ["client-id"]: false,
       ["redirect-uri"]: false,
       ["token-response"]: false,
       ["scopes"]: false,
+      ["access-token"]: false
     }
   }
 }
