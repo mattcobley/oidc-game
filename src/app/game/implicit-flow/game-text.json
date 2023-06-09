@@ -3,5 +3,5 @@
   "2": "Unfortunately the profile is a protected resources, and requires authentication to gain access.",
   "3": "We're going to try to use OIDC to authenticate and gain an access token, which should let us access the profile.",
   "4": "To keep things simple, we're going to start with the implicit flow - where we get the access token directly from the authorisation server.",
-  "5": "Good luck.",
+  "5": "Good luck."
 }

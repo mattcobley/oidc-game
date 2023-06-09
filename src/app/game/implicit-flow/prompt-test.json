@@ -1,11 +1,28 @@
 {
-	"get": "Correct! As this is the implicit flow, we simply need to GET the access token directly.",
-	"post": "Incorrect, the implicit flow simply requires GETting the access token directly.",
-	"scopes": "Correct! We simply require the 'oidc' scope to authenticate the user via OIDC.",
-	"redirect_uri": "Correct! Upon the authorisation server authenticating the user successfully, we need to send the access token to the redirect URI inputted.",
-	"auth_endpoint": "Correct! As this is the implicit flow, everything we need we get from the /authorize endpoint, and the /token endpoint remains unused.",
-	"token_endpoint": "Incorrect, in the implicit flow we get our access token directly from the /authorize endpoint, and have no need to interact with /token.",
-	"client_id": "Correct! All requests to the /authorize endpoint mandate a client ID being passed.",
-	"client_secret": "Incorrect, the client secret is used only in the authorisation code flow, and is sent to the /token endpoint to exchange an authorisation code for an access token.",
-	"token_response_type": "Correct! As this is the implicit flow, we will not be using the standard 'code' response type, as we are asking for the access token directly."
+	"step_one": {
+		"get": "Correct! As this is the implicit flow, we simply need to GET the access token directly.",
+		"post": "Incorrect, the implicit flow simply requires GETting the access token directly.",
+		"scopes": "Correct! We simply require the 'oidc' scope to authenticate the user via OIDC.",
+		"redirect_uri": "Correct! Upon the authorisation server authenticating the user successfully, we need to send the access token to the redirect URI inputted.",
+		"auth_endpoint": "Correct! As this is the implicit flow, everything we need we get from the /authorize endpoint, and the /token endpoint remains unused.",
+		"token_endpoint": "Incorrect, in the implicit flow we get our access token directly from the /authorize endpoint, and have no need to interact with /token.",
+		"data_endpoint": "Incorrect, we dont have access to this endpoint...yet",
+		"client_id": "Correct! All requests to the /authorize endpoint mandate a client ID being passed.",
+		"client_secret": "Incorrect, the client secret is used only in the authorisation code flow, and is sent to the /token endpoint to exchange an authorisation code for an access token.",
+		"token_response_type": "Correct! As this is the implicit flow, we will not be using the standard 'code' response type, as we are asking for the access token directly.",
+		"access_token": "Incorrect, we dont have this yet!"
+	},
+	"step_three": {
+		"get": "Correct! We can now use a GET request to ask for data",
+		"post": "Incorrect, the data endpoint we are using does not use POST.",
+		"scopes": "Incorrect, we dont need scopes anymore.",
+		"redirect_uri": "Incorrect, we dont need redirects anymore.",
+		"auth_endpoint": "Incorrect, we want to now hit the data endpoint.",
+		"token_endpoint": "Incorrect, in the implicit flow we get our access token directly from the /authorize endpoint, and have no need to interact with /token.",
+		"data_endpoint": "Correct! we can now use our access token to hit the data endpoint.",
+		"client_id": "Incorrect, we dont need clientId anymore.",
+		"client_secret": "Incorrect, the client secret is used only in the authorisation code flow, and is sent to the /token endpoint to exchange an authorisation code for an access token.",
+		"token_response_type": "Incorrect, we dont need a response type anymore.",
+		"access_token": "Correct! We now have the access token and can use it for auth on the data endpoint."
+	}
 }

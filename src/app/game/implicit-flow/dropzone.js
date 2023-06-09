@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { setAnswer } from '../../answerSlice'
 import { setText, resetText } from '../../textSlice'
 
-export default function Dropzone({ requestPanelImagePath, options = [], levelId, stepId = 1 }) {
+export default function Dropzone({ requestPanelImagePath, options = [], messages = [], levelId, stepId = 1 }) {
   const dispatch = useDispatch()
   const dragId = useSelector((state) => state.drag.dragId)
   const answers = useSelector((state) => state.answer[levelId][stepId])
@@ -18,10 +18,10 @@ export default function Dropzone({ requestPanelImagePath, options = [], levelId,
     event.preventDefault()
     if (optionNames.includes(dragId)) {
       dispatch(setAnswer({ levelId, stepId, answerName: dragId }))
-      dispatch(resetText())
+      dispatch(setText(messages.filter(({name}) => name == dragId)[0].message))
     }
     else {
-      dispatch(setText("Sorry, that's incorrect"))
+      dispatch(setText(messages.filter(({name}) => name == dragId)[0].message))
     }
   }
 
