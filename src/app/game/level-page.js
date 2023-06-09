@@ -62,7 +62,7 @@ export default function LevelPage({
       </div>
       <Image
         className={styles.consentcomplete}
-        src={`/access_token.png`}
+        src={`/token_acquired.gif`}
         alt={`Consent complete`}
         width={512}
         height={512}

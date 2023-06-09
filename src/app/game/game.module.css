@@ -116,13 +116,14 @@
   position: absolute;
   top: 120px;
   left: 400px;
+}
 
-  .hero {
-    position: relative;
-  }
+.hero {
+  position: relative;
+}
 
-  .innerhero {
-    position: absolute;
-    left: -80px;
-    top: -10px;
-  }
+.innerhero {
+  position: absolute;
+  left: -80px;
+  top: -10px;
+}
