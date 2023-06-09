@@ -43,9 +43,9 @@
 
 .stepslist {
   border: 5px solid grey;
-  height: 400px;
+  height: 530px;
   width: 180px;
-  margin: 10px;
+  margin-right: 10px;
   position: absolute;
   top: 0;
   left: 0;
@@ -81,8 +81,9 @@
 
 .optionslist {
   border: 5px solid grey;
-  min-height: 60vh;
-  margin: 10px;
+  height: 530px;
+  overflow: scroll;
+  margin-left: 20px;
   position: absolute;
   top: 0;
   left: 850px;
